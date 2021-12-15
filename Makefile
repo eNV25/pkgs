@@ -1,12 +1,12 @@
 
-all:
+all: .phony
 
-vcspkgs: anbox-modules-dkms-git keyd-git vim-toml-git wgcf-git
+vcspkgs: anbox-modules-dkms-git keyd-git vim-toml-git wgcf-git .phony
 
-clean:
+clean: .phony
 	git clean -dffx
 
 %: %/PKGBUILD .phony
 	cd $@ && makepkg -f
 
-.PHONY: all vcspkgs clean .phony
+.PHONY: .phony
