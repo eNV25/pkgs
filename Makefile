@@ -7,6 +7,7 @@ VCSPKGS := $(VCSPKGS:%/=%)
 
 MAKEPKG_TARGETS := $(PKGS:%=%/makepkg)
 UPDPKGSUMS_TARGETS := $(PKGS:%=%/updpkgsums)
+AURPUBLISH_TARGETS := $(PKGS:%=%/aurpublish)
 
 all:
 
@@ -29,4 +30,7 @@ $(MAKEPKG_TARGETS): %/makepkg: %/PKGBUILD
 $(UPDPKGSUMS_TARGETS): %/updpkgsums: %/PKGBUILD
 	$(call pkgmk)
 
-.PHONY: all vcspkgs $(PKGS) $(MAKEPKG_TARGETS) $(UPDPKGSUMS_TARGETS)
+$(AURPUBLISH_TARGETS): %/aurpublish: %/PKGBUILD
+	aurpublish $(@D)
+
+.PHONY: all vcspkgs $(PKGS) $(MAKEPKG_TARGETS) $(UPDPKGSUMS_TARGETS) $(AURPUBLISH_TARGETS)
