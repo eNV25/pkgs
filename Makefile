@@ -14,6 +14,12 @@ all:
 cleani:
 	git clean -dffxi
 
+shellcheck:
+	@# https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
+	@# https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
+	@# https://www.shellcheck.net/wiki/SC2164 -- Use cd ... || exit in case cd fails.
+	shellcheck --shell=bash --exclude=SC2034,SC2154,SC2164 -- **/*.sh **/*.install */PKGBUILD | exec less
+
 pkgs: $(PKGS)
 
 vcspkgs: $(VCSPKGS)
@@ -33,4 +39,4 @@ $(UPDPKGSUMS_TARGETS): %/updpkgsums: %/PKGBUILD
 $(AURPUBLISH_TARGETS): %/aurpublish: %/PKGBUILD
 	aurpublish $(@D)
 
-.PHONY: all vcspkgs $(PKGS) $(MAKEPKG_TARGETS) $(UPDPKGSUMS_TARGETS) $(AURPUBLISH_TARGETS)
+.PHONY: all cleani shellcheck pkgs vcspkgs $(PKGS) $(MAKEPKG_TARGETS) $(UPDPKGSUMS_TARGETS) $(AURPUBLISH_TARGETS)
