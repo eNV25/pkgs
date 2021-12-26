@@ -1,9 +1,9 @@
 
 PKGS := $(wildcard */)
-PKGS := $(PKGS:%/=%)
+PKGS := $(PKGS:%/=%) $(PKGS)
 
 VCSPKGS := $(wildcard *-git/)
-VCSPKGS := $(VCSPKGS:%/=%)
+VCSPKGS := $(VCSPKGS:%/=%) $(VCSPKGS)
 
 MAKEPKG_TARGETS := $(PKGS:%=%/makepkg)
 UPDPKGSUMS_TARGETS := $(PKGS:%=%/updpkgsums)
@@ -24,7 +24,7 @@ pkgs: $(PKGS)
 
 vcspkgs: $(VCSPKGS)
 
-define pkgmk
+define pkgmk =
 	@make -C $* -f ../pkg.mk $(@F)
 endef
 
