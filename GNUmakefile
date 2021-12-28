@@ -1,47 +1,35 @@
 
-PKGS := $(wildcard */)
-PKGS := $(PKGS:%/=%)
+PKGBUILDs := $(wildcard */PKGBUILD)
 
-VCSPKGS := $(wildcard *-git/)
-VCSPKGS := $(PKGS:%/=%)
+pkgs := $(PKGBUILDs:%/PKGBUILD=%)
+vcspkgs := $(filter %-git,$(pkgs))
+pkg_targets := $(pkgs:%=%/)
+makepkg_targets := $(pkgs:%=%/makepkg)
+install_targets := $(pkgs:%=%/install)
+updpkgsums_targets := $(pkgs:%=%/updpkgsums)
+aurpublish_targets := $(pkgs:%=%/aurpublish)
 
-PKG_TARGETS := $(PKGS) $(PKGS:%=%/)
-MAKEPKG_TARGETS := $(PKGS:%=%/makepkg)
-INSTALL_TARGETS := $(PKGS:%=%/install)
-UPDPKGSUMS_TARGETS := $(PKGS:%=%/updpkgsums)
-AURPUBLISH_TARGETS := $(PKGS:%=%/aurpublish)
+pkgmk = @$(MAKE) -C $(@D) -f ../pkg.mk $(@F)
 
-all:
+all: ; @echo pkgs = $(pkgs); echo vcspkgs = $(vcspkgs)
+cleani: ; git clean -dffxi
+pkgs: $(pkgs);
+vcspkgs: $(vcspkgs);
+$(pkgs): %: %/makepkg;
+$(pkg_targets): %/: %/makepkg;
+$(makepkg_targets): %/makepkg: %/PKGBUILD; $(pkgmk)
+$(install_targets): %/install: %/PKGBUILD; $(pkgmk)
+$(updpkgsums_targets): %/updpkgsums: %/PKGBUILD; $(pkgmk)
+$(aurpublish_targets): %/aurpublish: %/PKGBUILD; aurpublish $(@d)
 
-cleani:
-	git clean -dffxi
-
-pkgs: $(PKGS)
-
-vcspkgs: $(VCSPKGS)
-
-define pkgmk =
-	@make -C $(@D) -f ../pkg.mk $(@F)
-endef
-
-$(PKG_TARGETS): %: %/makepkg
-
-$(MAKEPKG_TARGETS): %/makepkg: %/PKGBUILD
-	$(call pkgmk)
-
-$(INSTALL_TARGETS): %/install: %/PKGBUILD
-	$(call pkgmk)
-
-$(UPDPKGSUMS_TARGETS): %/updpkgsums: %/PKGBUILD
-	$(call pkgmk)
-
-$(AURPUBLISH_TARGETS): %/aurpublish: %/PKGBUILD
-	aurpublish $(@D)
-
+# https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
+# https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
+# https://www.shellcheck.net/wiki/SC2164 -- Use cd ... || exit in case cd fails.
 shellcheck:
-	@# https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
-	@# https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
-	@# https://www.shellcheck.net/wiki/SC2164 -- Use cd ... || exit in case cd fails.
-	shellcheck --shell=bash --exclude=SC2034,SC2154,SC2164 -- **/*.sh **/*.install */PKGBUILD | exec less
+	{ \
+		shellcheck --shell=bash --exclude=2034,2154,2164 -- */PKGBUILD; \
+		shellcheck --shell=bash -- */*.install; \
+		shellcheck -- */*.sh; \
+	} | less
 
-.PHONY: all cleani shellcheck pkgs vcspkgs $(PKG_TARGETS) $(MAKEPKG_TARGETS) $(UPDPKGSUMS_TARGETS) $(AURPUBLISH_TARGETS)
+.PHONY: all cleani shellcheck pkgs vcspkgs $(pkgs) $(pkg_targets) $(makepkg_targets) $(updpkgsums_targets) $(aurpublish_targets)
