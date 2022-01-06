@@ -1,0 +1,12 @@
+pkgbase = void-tools
+	pkgdesc = Some not Void specific tools from void-runit
+	pkgver = 20210314
+	pkgrel = 1
+	url = https://github.com/void-linux/void-runit
+	arch = x86_64
+	license = custom: public domain
+	license = custom:CC0
+	source = void-tools-20210314.tar.gz::https://github.com/void-linux/void-runit/archive/20210314.tar.gz
+	sha256sums = 9ac95a14b5e1aedfcf0b093b8992b08316448ac1afb7fd26501ac43c4ebf3847
+
+pkgname = void-tools

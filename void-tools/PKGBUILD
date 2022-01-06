@@ -1,0 +1,30 @@
+# Maintainer: Your Name <youremail@domain.com>
+
+pkgname=void-tools
+_pkgname=void-runit
+pkgver=20210314
+pkgrel=1
+pkgdesc="Some not Void specific tools from void-runit"
+arch=(x86_64)
+url="https://github.com/void-linux/$_pkgname"
+license=('custom: public domain' 'custom:CC0')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+
+build() {
+	cd "$_pkgname-$pkgver"
+	make
+}
+
+package() {
+	cd "$_pkgname-$pkgver"
+	make DESTDIR="$pkgdir" PREFIX=/usr install
+	cd "${pkgdir}"
+	rm -vrf etc/
+	rm -vrf usr/lib
+	mv -v usr/sbin usr/bin
+	for _cmd in halt poweroff reboot shutdown vlogger; do
+		rm -vf usr/bin/$_cmd usr/share/man/man8/$_cmd.8
+	done
+}
+
+sha256sums=('9ac95a14b5e1aedfcf0b093b8992b08316448ac1afb7fd26501ac43c4ebf3847')
