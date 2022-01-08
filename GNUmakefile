@@ -15,7 +15,7 @@ pkgmk = @$(MAKE) -C $(@D) -f ../pkg.mk $(@F)
 
 all:
 	@ { echo pkgs = $(pkgs); echo aurpkgs = $(aurpkgs); echo vcspkgs = $(vcspkgs); } | \
-		jq -Rn '[inputs] | map(split(" ")|{(.[0]):.[2:]}) | add'
+		jq -Rn '[inputs] | map(split(" ")|{(.[0]):.[2:]}) | add' | json2yaml -p
 
 cleani: ; git clean -dffxi
 pkgs: $(pkgs);
