@@ -1,0 +1,14 @@
+pkgbase = gccgo
+	pkgdesc = Go front-end for GCC
+	pkgver = 11.1.0
+	pkgrel = 3
+	url = https://gcc.gnu.org
+	arch = x86_64
+	license = GPL
+	depends = gcc=11.1.0-3
+	noextract = gcc-go-11.1.0-3.tar.zst
+	options = !strip
+	source_x86_64 = gcc-go-11.1.0-3.tar.zst::https://mirror.osbeck.com/archlinux/core/os/x86_64/gcc-go-11.1.0-3-x86_64.pkg.tar.zst
+	sha256sums_x86_64 = 5dab08b8a5133f87f7b21cc9fd2e41f4df3dbb251f6a132501bc352418bddd3a
+
+pkgname = gccgo

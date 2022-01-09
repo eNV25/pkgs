@@ -1,0 +1,24 @@
+# Maintainer: eNV25 <env252525@gmail.com>
+
+pkgname=gccgo
+_pkgname=gcc-go
+pkgver=11.1.0
+pkgrel=3
+pkgdesc="Go front-end for GCC"
+arch=(x86_64)
+url="https://gcc.gnu.org"
+license=('GPL')
+depends=("gcc=$pkgver-$pkgrel")
+options=(!strip)
+
+_repourl='https://mirror.osbeck.com/archlinux'
+source_x86_64=("gcc-go-$pkgver-$pkgrel.tar.zst::$_repourl/core/os/x86_64/gcc-go-$pkgver-$pkgrel-x86_64.pkg.tar.zst")
+noextract=("gcc-go-$pkgver-$pkgrel.tar.zst")
+
+package() {
+	bsdtar xf "gcc-go-$pkgver-$pkgrel.tar.zst" -C "$pkgdir"
+	cd "$pkgdir"
+	rm -rf .BUILDINFO .MTREE .PKGINFO usr/bin/go usr/bin/gofmt
+}
+
+sha256sums_x86_64=('5dab08b8a5133f87f7b21cc9fd2e41f4df3dbb251f6a132501bc352418bddd3a')
