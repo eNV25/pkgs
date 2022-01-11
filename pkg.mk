@@ -10,4 +10,4 @@ install:
 updpkgsums:
 	updpkgsums
 
-.PHONY: all makepkg updpkgsums
+.PHONY: all makepkg install updpkgsums
