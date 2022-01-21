@@ -1,13 +1,16 @@
 
 all:
 
-makepkg:
-	makepkg -f
+rm:
+	rm -rf *.pkg.tar*
 
-install:
-	makepkg -i
+mk:
+	paru -U
 
-updpkgsums:
+in:
+	paru -Ui
+
+up:
 	updpkgsums
 
 .PHONY: all makepkg install updpkgsums

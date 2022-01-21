@@ -6,10 +6,11 @@ pkgs := $(PKGBUILDs:%/PKGBUILD=%)
 aurpkgs := $(aur/PKGBUILDs:aur/%/PKGBUILD=%)
 vcspkgs := $(filter %-git,$(pkgs))
 pkg_targets := $(pkgs:%=%/)
-makepkg_targets := $(pkgs:%=%/makepkg)
-install_targets := $(pkgs:%=%/install)
-updpkgsums_targets := $(pkgs:%=%/updpkgsums)
-aurpublish_targets := $(aurpkgs:%=%/aurpublish)
+remove_targets := $(pkgs:%=%/rm)
+makepkg_targets := $(pkgs:%=%/mk)
+install_targets := $(pkgs:%=%/in)
+updpkgsums_targets := $(pkgs:%=%/up)
+aurpublish_targets := $(aurpkgs:%=%/pub)
 
 pkgmk = @$(MAKE) -C $(@D) -f ../pkg.mk $(@F)
 
@@ -22,12 +23,13 @@ pkgs: $(pkgs);
 aurpkgs: $(aurpkgs);
 vcspkgs: $(vcspkgs);
 aurpublish: $(aurpkgs:%=%/aurpublish);
-$(pkgs): %: %/makepkg;
-$(pkg_targets): %/: %/makepkg;
-$(makepkg_targets): %/makepkg: %/PKGBUILD; $(pkgmk)
-$(install_targets): %/install: %/PKGBUILD; $(pkgmk)
-$(updpkgsums_targets): %/updpkgsums: %/PKGBUILD; $(pkgmk)
-$(aurpublish_targets): %/aurpublish: %/PKGBUILD; aurpublish $(@D)
+$(pkgs): %: %/mk;
+$(pkg_targets): %/: %/mk;
+$(remove_targets): %/rm: %/PKGBUILD; $(pkgmk)
+$(makepkg_targets): %/mk: %/PKGBUILD; $(pkgmk)
+$(install_targets): %/in: %/PKGBUILD; $(pkgmk)
+$(updpkgsums_targets): %/up: %/PKGBUILD; $(pkgmk)
+$(aurpublish_targets): %/pub: %/PKGBUILD; aurpublish $(@D)
 
 # https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
 # https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
