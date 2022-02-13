@@ -3,22 +3,26 @@
 pkgname=gccgo
 _pkgname=gcc-go
 pkgver=11.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Go front-end for GCC"
 arch=(x86_64)
 url="https://gcc.gnu.org"
 license=('GPL')
 depends=("gcc=$pkgver-$pkgrel")
+conflicts=(gcc-go)
 options=(!strip)
 
-_repourl='https://mirror.osbeck.com/archlinux'
-source_x86_64=("gcc-go-$pkgver-$pkgrel.tar.zst::$_repourl/core/os/x86_64/gcc-go-$pkgver-$pkgrel-x86_64.pkg.tar.zst")
-noextract=("gcc-go-$pkgver-$pkgrel.tar.zst")
+source_x86_64=("gcc-go.tar.zst::https://archlinux.org/packages/core/x86_64/$_pkgname/download")
+noextract=("gcc-go.tar.zst")
+
+pkgver() {
+	bsdtar xfO "gcc-go.tar.zst" .BUILDINFO | sed -En '/pkgver = (.*)-.*/ { s//\1/; p; q }'
+}
 
 package() {
-	bsdtar xf "gcc-go-$pkgver-$pkgrel.tar.zst" -C "$pkgdir"
+	bsdtar xf "gcc-go.tar.zst" -C "$pkgdir"
 	cd "$pkgdir"
 	rm -rf .BUILDINFO .MTREE .PKGINFO usr/bin/go usr/bin/gofmt
 }
 
-sha256sums_x86_64=('5dab08b8a5133f87f7b21cc9fd2e41f4df3dbb251f6a132501bc352418bddd3a')
+sha256sums_x86_64=('SKIP')
