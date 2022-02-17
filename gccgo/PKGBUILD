@@ -2,14 +2,14 @@
 
 pkgname=gccgo
 _pkgname=gcc-go
-pkgver=11.1.0
-pkgrel=4
+pkgver=11.2.0
+pkgrel=1
 pkgdesc="Go front-end for GCC"
 arch=(x86_64)
 url="https://gcc.gnu.org"
-license=('GPL')
-depends=("gcc=$pkgver-$pkgrel")
+depends=(gcc)
 conflicts=(gcc-go)
+license=('GPL')
 options=(!strip)
 
 source_x86_64=("gcc-go.tar.zst::https://archlinux.org/packages/core/x86_64/$_pkgname/download")
