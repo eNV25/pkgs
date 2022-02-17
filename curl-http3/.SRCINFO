@@ -16,10 +16,15 @@ pkgbase = curl-http3
 	depends = libnghttp2
 	depends = libidn2
 	depends = libidn2.so
+	options = !lto
 	source = https://curl.haxx.se/download/curl-7.81.0.tar.gz
 	source = https://curl.haxx.se/download/curl-7.81.0.tar.gz.asc
+	source = quiche-0.12.0.tar.gz::https://github.com/cloudflare/quiche/archive/0.12.0.tar.gz
+	source = boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d.tar.gz::https://github.com/google/boringssl/archive/f1c75347daa2ea81a941e953f2263e0a4d970c8d.tar.gz
 	validpgpkeys = 27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2
 	sha512sums = e3084f0fa083f7f93eac923edbfdddb5fd0a372b94673ba9d4427a2b95508898c15ecdf63b99a1c1f6cf3215e27b06cbaa2b7073df038d43b362e586f92495d3
 	sha512sums = SKIP
+	sha512sums = 723960b439fc6d880da88500713875fad56c7076102ca67631611d8c9529a7e82598fec42a617133c379686b4e05c8c6fc00ff10104b92e0d2f45f5f6912be30
+	sha512sums = 016cb11767e5792335cd8794087e92c5a1d76767ab7042afcf2eb9b568c53c7b154c34fe3b9be8c042a3034ebfc1d347cb897b4eded3ae3a1ec11c2f65e9ae07
 
 pkgname = curl-http3
