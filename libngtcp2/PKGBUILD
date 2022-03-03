@@ -1,0 +1,40 @@
+# Maintainer: eNV25 <env252525@gmail.com>
+# Contributor: Dave Reisner <d@falconindy.com>
+
+pkgname=libngtcp2
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="An effort to implement IETF QUIC protocol"
+arch=('x86_64')
+url="https://github.com/ngtcp2/ngtcp2"
+license=('MIT')
+depends=('gnutls')
+makedepends=('git')
+checkdepends=('cunit')
+source=("https://github.com/ngtcp2/ngtcp2/releases/download/v$pkgver/ngtcp2-$pkgver.tar.xz")
+
+build() {
+	cd "$srcdir/ngtcp2-$pkgver"
+
+	./configure \
+		--with-gnutls \
+		--enable-lib-only \
+		--prefix=/usr
+	make
+}
+
+check() {
+	cd "$srcdir/ngtcp2-$pkgver"
+
+	make -k check
+}
+
+package_libngtcp2() {
+	provides+=('libngtcp2.so')
+
+	cd "$srcdir/ngtcp2-$pkgver"
+
+	make DESTDIR="$pkgdir" install
+}
+
+sha256sums=('7989b9cdcb3b36a3daf00bd7b759673ff626ef7d0fa92b8b944d1cc6243d4554')
