@@ -1,0 +1,68 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Paulo Matias <matiasΘarchlinux-br·org>
+# Contributor: Georgij Kondratjev <smpuj@bk.ru>
+# Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
+
+pkgname=netsurf
+pkgver=3.10.r14721.r1212.8f7036e44.46f33e5
+_netsurf_pkgver=3.10
+pkgrel=1
+pkgdesc='Lightweight and fast web browser'
+arch=(x86_64)
+url='https://www.netsurf-browser.org/'
+license=(MIT GPL2)
+depends=(bash curl gtk3 'libhubbub=0.3.7' libjpeg-turbo 'libnsutils=0.1.0'
+         'libutf8proc>=2.6.0' 'libwapcaplet>=0.4.3' 'libdom>=0.4.1' libwebp)
+# vim is needed only for xxd when building
+makedepends=(check inetutils 'libcss>=0.9.1' 'libnsbmp>=0.1.6'
+             'libnsgif>=0.2.1' 'nsgenbind>=0.8' perl-html-parser setconf vim)
+source=(
+  "https://download.netsurf-browser.org/netsurf/releases/source-full/netsurf-all-$_netsurf_pkgver.tar.gz"
+  'git+https://git.sr.ht/~sircmpwn/visurf'
+  'git+https://git.netsurf-browser.org/libcss.git'
+)
+sha256sums=('495adf6b6614ce36fca6c605f7c321f9cb4a3df838043158122678ce2b3325b7'
+            'SKIP'
+            'SKIP')
+
+pkgver() {
+  printf "%s.r%s.r%s.%s.%s" \
+    "$_netsurf_pkgver" \
+    "$(cd visurf; git rev-list --count HEAD)" \
+    "$(cd libcss; git rev-list --count HEAD)" \
+    "$(cd visurf; git rev-parse --short HEAD)" \
+    "$(cd libcss; git rev-parse --short HEAD)"
+}
+
+prepare() {
+  rm -rvf "netsurf-all-$_netsurf_pkgver/netsurf"
+  ln -srvf "visurf" "netsurf-all-$_netsurf_pkgver/netsurf"
+  rm -rvf "netsurf-all-$_netsurf_pkgver/libcss"
+  ln -srvf "libcss" "netsurf-all-$_netsurf_pkgver/libcss"
+}
+
+build() {
+  CFLAGS="$CFLAGS -w -Os -funroll-loops" \
+    make -C "netsurf-all-$_netsurf_pkgver/netsurf" \
+    NETSURF_UA_FORMAT_STRING='"NetSurf/%d.%d (%s; Arch Linux)"' \
+    TARGET=visurf \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    PREFIX=/usr
+}
+
+package() {
+  CFLAGS="$CFLAGS -w -Os -funroll-loops" \
+    make -C "netsurf-all-$_netsurf_pkgver/netsurf" \
+    NETSURF_UA_FORMAT_STRING='"NetSurf/%d.%d (%s; Arch Linux)"' \
+    TARGET=visurf \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    DESTDIR="$pkgdir" \
+    PREFIX=/usr \
+    install
+  cd "netsurf-all-$_netsurf_pkgver/netsurf"
+  # "$pkgdir/usr/share/pixmaps/$pkgname.xpm"
+  # "$pkgdir/usr/share/applications/$pkgname.desktop"
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
