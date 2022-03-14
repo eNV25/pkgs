@@ -1,7 +1,10 @@
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: eNV25 <env252525@gmail.com>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Paulo Matias <matiasΘarchlinux-br·org>
 # Contributor: Georgij Kondratjev <smpuj@bk.ru>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
+
+# BROKEN(eNV25): some libcss build errors
 
 pkgname=netsurf
 pkgver=3.10.r14721.r1212.8f7036e44.46f33e5
