@@ -5,10 +5,10 @@ rm:
 	rm -rf *.pkg.tar*
 
 mk:
-	paru -U
+	makepkg -cfs
 
 in:
-	paru -Ui
+	makepkg -cfis
 
 up:
 	updpkgsums
