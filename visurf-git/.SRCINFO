@@ -1,6 +1,6 @@
 pkgbase = netsurf
 	pkgdesc = Lightweight and fast web browser
-	pkgver = 3.10.r14721.r1212.8f7036e44.46f33e5
+	pkgver = 3.10.r14721.r1217.8f7036e44.f420dd1
 	pkgrel = 1
 	url = https://www.netsurf-browser.org/
 	arch = x86_64

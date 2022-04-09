@@ -7,7 +7,7 @@
 # BROKEN(eNV25): some libcss build errors
 
 pkgname=netsurf
-pkgver=3.10.r14721.r1212.8f7036e44.46f33e5
+pkgver=3.10.r14721.r1217.8f7036e44.f420dd1
 _netsurf_pkgver=3.10
 pkgrel=1
 pkgdesc='Lightweight and fast web browser'
