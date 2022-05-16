@@ -2,7 +2,7 @@
 
 pkgname=gccgo
 _pkgname=gcc-go
-pkgver=11.2.0
+pkgver=12.1.0
 pkgrel=1
 pkgdesc="Go front-end for GCC"
 arch=(x86_64)
