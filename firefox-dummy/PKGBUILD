@@ -1,0 +1,8 @@
+# Maintainer: eNV25 <env252525@gmail.com>
+
+pkgname=firefox-dummy
+pkgver=100
+pkgrel=1
+arch=(any)
+provides=("firefox=$pkgver")
+conflicts=(firefox)
