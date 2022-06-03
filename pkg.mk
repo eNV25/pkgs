@@ -13,4 +13,4 @@ in:
 up:
 	updpkgsums
 
-.PHONY: all makepkg install updpkgsums
+.PHONY: all rm mk in up

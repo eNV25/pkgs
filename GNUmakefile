@@ -14,31 +14,31 @@ aurpublish_targets := $(aurpkgs:%=%/pub)
 
 pkgmk = @$(MAKE) -C $(@D) -f ../pkg.mk $(@F)
 
-all:
+all: .phony
 	@ { echo pkgs = $(pkgs); echo aurpkgs = $(aurpkgs); echo vcspkgs = $(vcspkgs); } | \
 		jq -Rn '[inputs] | map(split(" ")|{(.[0]):.[2:]}) | add' | json2yaml -p
 
-cleani: ; git clean -dffxi
-pkgs: $(pkgs);
-aurpkgs: $(aurpkgs);
-vcspkgs: $(vcspkgs);
-aurpublish: $(aurpkgs:%=%/aurpublish);
-$(pkgs): %: %/mk;
-$(pkg_targets): %/: %/mk;
-$(remove_targets): %/rm: %/PKGBUILD; $(pkgmk)
-$(makepkg_targets): %/mk: %/PKGBUILD; $(pkgmk)
-$(install_targets): %/in: %/PKGBUILD; $(pkgmk)
-$(updpkgsums_targets): %/up: %/PKGBUILD; $(pkgmk)
-$(aurpublish_targets): %/pub: %/PKGBUILD; aurpublish $(@D)
+cleani: .phony; git clean -dffxi
+pkgs: $(pkgs) .phony;
+aurpkgs: $(aurpkgs) .phony;
+vcspkgs: $(vcspkgs) .phony;
+aurpublish: $(aurpkgs:%=%/aurpublish) .phony;
+$(pkgs): %: %/mk .phony;
+$(pkg_targets): %/: %/mk .phony;
+$(remove_targets): %/rm: %/PKGBUILD .phony; $(pkgmk)
+$(makepkg_targets): %/mk: %/PKGBUILD .phony; $(pkgmk)
+$(install_targets): %/in: %/PKGBUILD .phony; $(pkgmk)
+$(updpkgsums_targets): %/up: %/PKGBUILD .phony; $(pkgmk)
+$(aurpublish_targets): %/pub: %/PKGBUILD .phony; aurpublish $(@D)
 
 # https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
 # https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
 # https://www.shellcheck.net/wiki/SC2164 -- Use cd ... || exit in case cd fails.
-shellcheck:
+shellcheck: .phony
 	{ \
 		shellcheck --shell=bash --exclude=2034,2154,2164 -- */PKGBUILD; \
 		shellcheck --shell=bash -- */*.install; \
 		shellcheck -- */*.sh; \
 	} | less
 
-.PHONY: all cleani shellcheck pkgs vcspkgs $(pkgs) $(pkg_targets) $(makepkg_targets) $(install_targets) $(updpkgsums_targets) $(aurpublish_targets)
+.PHONY: .phony
