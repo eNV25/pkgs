@@ -1,6 +1,6 @@
-pkgbase = nnn-git
+pkgbase = nnn-custom
 	pkgdesc = The fastest terminal file manager ever written.
-	pkgver = 4.5.r53.g61645642
+	pkgver = 4.5.r53.g78299400
 	pkgrel = 1
 	url = https://github.com/jarun/nnn
 	arch = x86_64
@@ -20,4 +20,4 @@ pkgbase = nnn-git
 	source = git+https://github.com/jarun/nnn.git
 	md5sums = SKIP
 
-pkgname = nnn-git
+pkgname = nnn-custom

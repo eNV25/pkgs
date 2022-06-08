@@ -1,8 +1,8 @@
 # Maintainter: eNV25 <env252525@gmail.com>
 # Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
-pkgname=nnn-git
-pkgver=4.5.r53.g61645642
+pkgname=nnn-custom
+pkgver=4.5.r53.g78299400
 pkgrel=1
 pkgdesc="The fastest terminal file manager ever written."
 arch=(x86_64)
