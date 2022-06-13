@@ -1,4 +1,9 @@
-# Maintainter: eNV25 <env252525@gmail.com>
+# Maintainer: eNV25 <env252525@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org
+# Contributor: Alexander Epaneshnikov <alex19ep@archlinux.org>
+# Contributor: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Pablo Arias <pabloariasal@gmail.com>
+# Contributor: John Jenkins <twodopeshaggy@gmail.com>
 # Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
 pkgname=nnn-custom
@@ -22,14 +27,11 @@ optdepends=(
 makedepends=(git)
 provides=(nnn)
 conflicts=(nnn)
-source=("git+${url}.git#tag=v$pkgver")
+source=("git+https://github.com/eNV25/nnn.git#branch=myv/$pkgver")
 md5sums=('SKIP')
 
 prepare() {
   cd nnn
-  git remote add fork https://github.com/eNV25/nnn || true
-  git fetch fork "myv/$pkgver"
-  git merge "fork/myv/$pkgver"
   sed -i 's/install: all/install:/' Makefile
 }
 

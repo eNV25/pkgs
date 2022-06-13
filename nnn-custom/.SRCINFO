@@ -17,7 +17,7 @@ pkgbase = nnn-custom
 	optdepends = xdg-utils: desktop opener
 	provides = nnn
 	conflicts = nnn
-	source = git+https://github.com/jarun/nnn.git#tag=v4.5
+	source = git+https://github.com/eNV25/nnn.git#branch=myv/4.5
 	md5sums = SKIP
 
 pkgname = nnn-custom
