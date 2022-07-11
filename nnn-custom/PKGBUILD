@@ -7,7 +7,7 @@
 # Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
 pkgname=nnn-custom
-pkgver=4.5.r92.g8520fe5a
+pkgver=4.5.r98.gb658f324
 pkgrel=1
 pkgdesc="The fastest terminal file manager ever written."
 arch=(x86_64)
