@@ -7,7 +7,7 @@
 # Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
 
 pkgname=nnn-custom
-pkgver=4.5
+pkgver=4.5.r92.g8520fe5a
 pkgrel=1
 pkgdesc="The fastest terminal file manager ever written."
 arch=(x86_64)
@@ -27,8 +27,13 @@ optdepends=(
 makedepends=(git)
 provides=(nnn)
 conflicts=(nnn)
-source=("git+https://github.com/eNV25/nnn.git#branch=myv/$pkgver")
+source=("git+${url}.git")
 md5sums=('SKIP')
+
+pkgver() {
+  cd nnn
+  git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//g'
+}
 
 prepare() {
   cd nnn
