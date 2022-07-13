@@ -1,7 +1,7 @@
 pkgbase = gccgo
 	pkgdesc = Go front-end for GCC
 	pkgver = 12.1.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://gcc.gnu.org
 	arch = x86_64
 	license = GPL
