@@ -1,4 +1,4 @@
 */*/
 */*.tar*
-*.pkg.tar.*
+*.pkg.tar*
 *.deb
