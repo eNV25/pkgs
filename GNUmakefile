@@ -22,7 +22,7 @@ cleani: .phony; git clean -dffxi
 pkgs: $(pkgs) .phony;
 aurpkgs: $(aurpkgs) .phony;
 vcspkgs: $(vcspkgs) .phony;
-aurpublish: $(aurpkgs:%=%/aurpublish) .phony;
+aurpublish: $(aurpkgs:%=%/pub) .phony;
 $(pkgs): %: %/mk .phony;
 $(pkg_targets): %/: %/mk .phony;
 $(remove_targets): %/rm: %/PKGBUILD .phony; $(pkgmk)
