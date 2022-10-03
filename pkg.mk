@@ -2,13 +2,13 @@
 all:
 
 rm:
-	rm -rf *.pkg.tar*
+	rm -rf ./*.pkg.tar*
 
 mk:
-	makepkg -cfs
+	PARU_CONF=/dev/null paru -U
 
 in:
-	makepkg -cfis
+	PARU_CONF=/dev/null paru -Ui
 
 up:
 	updpkgsums

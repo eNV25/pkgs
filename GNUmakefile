@@ -1,6 +1,6 @@
 
-PKGBUILDs := $(wildcard */PKGBUILD)
-aur/PKGBUILDs := $(wildcard aur/*/PKGBUILD)
+PKGBUILDs := $(wildcard ./*/PKGBUILD)
+aur/PKGBUILDs := $(wildcard ./aur/*/PKGBUILD)
 
 pkgs := $(PKGBUILDs:%/PKGBUILD=%)
 aurpkgs := $(aur/PKGBUILDs:aur/%/PKGBUILD=%)
@@ -36,9 +36,9 @@ $(aurpublish_targets): %/pub: %/PKGBUILD .phony; aurpublish $(@D)
 # https://www.shellcheck.net/wiki/SC2164 -- Use cd ... || exit in case cd fails.
 shellcheck: .phony
 	{ \
-		shellcheck --shell=bash --exclude=2034,2154,2164 -- */PKGBUILD; \
-		shellcheck --shell=bash -- */*.install; \
-		shellcheck -- */*.sh; \
+		shellcheck --shell=bash --exclude=2034,2154,2164 -- ./*/PKGBUILD; \
+		shellcheck --shell=bash -- ./*/*.install; \
+		shellcheck -- ./*/*.sh; \
 	} | less
 
 .PHONY: .phony
