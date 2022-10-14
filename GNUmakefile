@@ -2,8 +2,8 @@
 PKGBUILDs := $(wildcard ./*/PKGBUILD)
 aur/PKGBUILDs := $(wildcard ./aur/*/PKGBUILD)
 
-pkgs := $(PKGBUILDs:%/PKGBUILD=%)
-aurpkgs := $(aur/PKGBUILDs:aur/%/PKGBUILD=%)
+pkgs := $(PKGBUILDs:./%/PKGBUILD=%)
+aurpkgs := $(aur/PKGBUILDs:./aur/%/PKGBUILD=%)
 vcspkgs := $(filter %-git,$(pkgs))
 pkg_targets := $(pkgs:%=%/)
 remove_targets := $(pkgs:%=%/rm)
