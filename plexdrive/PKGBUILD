@@ -1,8 +1,8 @@
 # Maintainer: Axel Gembe <derago@gmail.com>
 pkgname=plexdrive
 pkgver=5.2.1
-pkgrel=1
-pkgdesc='Plexdrive mounts your Google Drive FUSE filesystem (optimized for media playback)'
+pkgrel=2
+pkgdesc='Mounts your Google Drive FUSE filesystem (optimized for media playback)'
 arch=('x86_64' 'aarch64')
 url='https://github.com/plexdrive/plexdrive'
 license=('MIT')
@@ -10,7 +10,7 @@ depends=('fuse')
 makedepends=('go')
 provides=("$pkgname")
 conflicts=("$pkgname")
-source=("https://github.com/plexdrive/plexdrive/archive/$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/plexdrive/plexdrive/archive/$pkgver.tar.gz")
 sha256sums=('37d64c4c201419054d33b0313c70e79c53bb55e3c6d35eabdebc43b634c41100')
 
 build() {
