@@ -12,7 +12,7 @@ conflicts=(gcc-go)
 license=('GPL')
 options=(!strip)
 
-source_x86_64=("gcc-go.tar.zst::https://archlinux.org/packages/core/x86_64/$_pkgname/download")
+source_x86_64=("gcc-go.tar.zst::https://archlinux.org/packages/core/$CARCH/$_pkgname/download")
 noextract=("gcc-go.tar.zst")
 
 pkgver() {
