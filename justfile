@@ -1,14 +1,12 @@
 
-default:
-	@ { echo pkgs = {{pkgs}}; echo aurpkgs = {{aurpkgs}}; echo vcspkgs = {{vcspkgs}}; } | \
-		jq -Rn '[inputs] | map(split(" ")|{(.[0]):.[2:]}) | add' | json2yaml -p
+vcspkgs := `fd -d1 -p '\-(git|cvs|svn|bzr|darcs|always)/PKGBUILD' */ -X echo '{//}'`
+pkgs    := `fd -d1 -p '/PKGBUILD$' */ -X echo '{//}'`
+aurpkgs := `cd aur && fd -d1 -p '/PKGBUILD$' */ -X echo '{//}'`
+
+print:
 	@ just --list
-
-export PARU_CONF := "/dev/null"
-
-pkgs    := `echo ./*/PKGBUILD     | tr ' ' '\n' | cut -d/ -f2                 | tr '\n' ' '`
-aurpkgs := `echo ./aur/*/PKGBUILD | tr ' ' '\n' | cut -d/ -f3                 | tr '\n' ' '`
-vcspkgs := `echo ./*/PKGBUILD     | tr ' ' '\n' | cut -d/ -f2 | rg -- '-git$' | tr '\n' ' '`
+	@ { echo pkgs {{ pkgs }}; echo aurpkgs {{ aurpkgs }}; echo vcspkgs {{ vcspkgs }}; } | \
+		gojq -Rn '[inputs] | map(split(" ") | { (.[0]): .[1:] }) | add' --yaml-output
 
 alias c := clean
 alias b := build
@@ -23,20 +21,34 @@ install pkg: (paruinstall pkg)
 publish pkg: (aurpublish pkg)
 update pkg: (updpkgsums pkg)
 
+export PARU_CONF := "/dev/null"
+
 clean:
 	git clean -dffxi
 
-aurpublish pkg:
-	aurpublish {{pkg}}
-
 parubuild pkg:
-	cd {{pkg}} && paru -U
+	cd {{ pkg }} && paru -U
 
 paruinstall pkg:
-	cd {{pkg}} && paru -Ui
+	cd {{ pkg }} && paru -Ui
 
 updpkgsums pkg:
-	cd {{pkg}} && updpkgsums
+	cd {{ pkg }} && updpkgsums
+
+bpkgs:
+	@ for pkg in {{ pkgs }}; do \
+		just build $pkg; \
+	done
+
+bvcspkgs:
+	@ for pkg in {{ vcspkgs }}; do \
+		just build $pkg; \
+	done
+
+aurpublish pkg:
+	@ if [ {{ path_exists(join("aur", pkg)) }} = true ]; then \
+		aurpublish {{pkg}}; \
+	fi
 
 # https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
 # https://www.shellcheck.net/wiki/SC2154 -- var is referenced but not assigned.
