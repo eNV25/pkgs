@@ -23,13 +23,16 @@ update pkg: (updpkgsums pkg)
 
 export PARU_CONF := "/dev/null"
 
-clean:
+clean-all:
 	git clean -dffxi
 
-parubuild pkg:
+clean pkg:
+	cd {{ pkg }} && rm -rf *.pkg.tar*
+
+parubuild pkg: (clean pkg)
 	cd {{ pkg }} && paru -U
 
-paruinstall pkg:
+paruinstall pkg: (clean pkg)
 	cd {{ pkg }} && paru -Ui
 
 updpkgsums pkg:
@@ -47,7 +50,7 @@ bvcspkgs:
 
 aurpublish pkg:
 	@ if [ {{ path_exists(join("aur", pkg)) }} = true ]; then \
-		aurpublish {{pkg}}; \
+		aurpublish {{ pkg }}; \
 	fi
 
 # https://www.shellcheck.net/wiki/SC2034 -- foo appears unused. Verify it or export it.
