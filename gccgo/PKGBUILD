@@ -2,8 +2,8 @@
 
 pkgname=gccgo
 _pkgname=gcc-go
-pkgver=12.1.0
-pkgrel=2
+pkgver=12.2.0
+pkgrel=1
 pkgdesc="Go front-end for GCC"
 arch=(x86_64)
 url="https://gcc.gnu.org"
@@ -12,17 +12,14 @@ conflicts=(gcc-go)
 license=('GPL')
 options=(!strip)
 
-source_x86_64=("gcc-go.tar.zst::https://archlinux.org/packages/core/$CARCH/$_pkgname/download")
-noextract=("gcc-go.tar.zst")
-
 pkgver() {
-	bsdtar xfO "gcc-go.tar.zst" .BUILDINFO | sed -En '/pkgver = (.*)-.*/ { s//\1/; p; q }'
+	# ugly hack
+	curl -sL -o "gcc-go.tar.zst" "https://archlinux.org/packages/core/$CARCH/$_pkgname/download"
+	bsdtar xfO gcc-go.tar.zst .BUILDINFO | sed -En '/pkgver = (.*)-.*/ { s//\1/; p; q }'
 }
 
 package() {
-	bsdtar xf "gcc-go.tar.zst" -C "$pkgdir"
+	bsdtar xvf "gcc-go.tar.zst" -C "$pkgdir"
 	cd "$pkgdir"
-	rm -rf .BUILDINFO .MTREE .PKGINFO usr/bin/go usr/bin/gofmt
+	rm -rvf .BUILDINFO .MTREE .PKGINFO usr/bin/go usr/bin/gofmt
 }
-
-sha256sums_x86_64=('SKIP')
