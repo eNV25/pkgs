@@ -1,0 +1,40 @@
+# Maintainer: eNV25 <env252525@gmail.com>
+
+pkgname=mpv-mpris2
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="Rust implementation of the MPRIS v2 DBus interface for the mpv media player."
+arch=(x86_64)
+url="https://github.com/eNV25/mpv-mpris2"
+license=('MIT-0')
+depends=('cargo' 'mpv')
+optdepends=(
+	'ffmpegthumbnailer: generate thumbnail for local file'
+	'yt-dlp: get thumbnail URL'
+	'youtube-dl: get thumbnail URL'
+)
+provides=('mpv-mpris')
+conflicts=('mpv-mpris')
+source=("https://github.com/eNV25/mpv-mpris2/archive/v$pkgver.tar.gz")
+
+export RUSTUP_TOOLCHAIN=stable
+export CARGO_TARGET_DIR=target
+
+prepare() {
+	cd "$pkgname-$pkgver"
+	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+  cargo build --frozen --release --all-features
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	install -v -Dm755 target/release/libmpv_mpris2.so "$pkgdir/usr/lib/mpv-mpris2/mpris.so"
+	mkdir -p "$pkgdir/etc/mpv/scripts/"
+	ln -srvf "$pkgdir/usr/lib/mpv-mpris2/mpris.so" "$pkgdir/etc/mpv/scripts/mpris.so"
+}
+
+sha256sums=('8cdde55313b31abbb21ff3ab1d68797738592c426e85cfe871a38be3317feedb')

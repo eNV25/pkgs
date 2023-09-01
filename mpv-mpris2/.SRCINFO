@@ -1,0 +1,18 @@
+pkgbase = mpv-mpris2
+	pkgdesc = Rust implementation of the MPRIS v2 DBus interface for the mpv media player.
+	pkgver = 0.0.0
+	pkgrel = 1
+	url = https://github.com/eNV25/mpv-mpris2
+	arch = x86_64
+	license = MIT-0
+	depends = cargo
+	depends = mpv
+	optdepends = ffmpegthumbnailer: generate thumbnail for local file
+	optdepends = yt-dlp: get thumbnail URL
+	optdepends = youtube-dl: get thumbnail URL
+	provides = mpv-mpris
+	conflicts = mpv-mpris
+	source = https://github.com/eNV25/mpv-mpris2/archive/v0.0.0.tar.gz
+	sha256sums = 8cdde55313b31abbb21ff3ab1d68797738592c426e85cfe871a38be3317feedb
+
+pkgname = mpv-mpris2
