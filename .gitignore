@@ -1,4 +1,6 @@
 */*/
 */*.tar*
+*/*.tgz
+*/*.crate
 *.pkg.tar*
 *.deb
