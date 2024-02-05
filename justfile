@@ -30,10 +30,10 @@ clean pkg:
 	cd {{ pkg }} && rm -rf *.pkg.tar*
 
 parubuild pkg: (clean pkg)
-	cd {{ pkg }} && paru -U
+	paru -B {{ pkg }}
 
 paruinstall pkg: (clean pkg)
-	cd {{ pkg }} && paru -Ui
+	paru -Bi {{ pkg }}
 
 updpkgsums pkg:
 	cd {{ pkg }} && updpkgsums
