@@ -1,0 +1,26 @@
+pkgbase = koreader-bin
+	pkgdesc = Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats
+	pkgver = 2024.03.1
+	pkgrel = 1
+	url = https://koreader.rocks
+	arch = x86_64
+	arch = aarch64
+	arch = armv7h
+	license = AGPL-3.0-or-later
+	depends = sdl2
+	depends = noto-fonts
+	depends = ttf-droid
+	provides = koreader
+	conflicts = koreader
+	source = https://salsa.debian.org/fonts-team/fonts-noto/-/raw/debian/20201225-2/hinted/ttf/NotoSansArabicUI/NotoSansArabicUI-Regular.ttf
+	source = https://salsa.debian.org/fonts-team/fonts-noto/-/raw/debian/20201225-2/hinted/ttf/NotoSansArabicUI/NotoSansArabicUI-Bold.ttf
+	sha256sums = 43a90e0f0e9ca712ff0588dc2b119823d569367a6d0061eb5f7bfb9bfbe8cecc
+	sha256sums = ef5d9ce3d5b20a83bdc156ef48edc1e159322ada95ebacc133476c92f0bd102a
+	source_x86_64 = https://github.com/koreader/koreader/releases/download/v2024.03.1/koreader-2024.03.1-amd64.deb
+	sha256sums_x86_64 = 119de2aa9d00d81670237e379efbe9ef5446431e853deb14072e0b85ae18cf85
+	source_aarch64 = https://github.com/koreader/koreader/releases/download/v2024.03.1/koreader-2024.03.1-arm64.deb
+	sha256sums_aarch64 = f41bbe9967c9b8f687e6757bd4932b7068a989959f71fd7d29f55ab825bddbe2
+	source_armv7h = https://github.com/koreader/koreader/releases/download/v2024.03.1/koreader-2024.03.1-armhf.deb
+	sha256sums_armv7h = 861b0c35f6628c7d24700ade66a18a4f05e2bae00159d4d1dd3af19163c7eca1
+
+pkgname = koreader-bin
