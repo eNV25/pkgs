@@ -1,0 +1,7 @@
+[xbps-static-bin]
+source = "regex"
+url = "https://repo-default.voidlinux.org/static/sha256sums.txt"
+regex = '-(\d+\.\d+(?:\.\d+)_\d+).x86_64-\w+.tar.\w+'
+sort_version_key = "vercmp"
+from_pattern = '^(\d+.\d+)_(\d+)$'
+to_pattern = '\1.0_\2'

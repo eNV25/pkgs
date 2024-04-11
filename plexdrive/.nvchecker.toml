@@ -1,0 +1,4 @@
+[plexdrive]
+source = "github"
+github = "plexdrive/plexdrive"
+use_latest_release = true

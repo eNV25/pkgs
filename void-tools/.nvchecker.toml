@@ -1,0 +1,4 @@
+[void-tools]
+source = "github"
+github = "void-linux/void-runit"
+use_max_tag = true
