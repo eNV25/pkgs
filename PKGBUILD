@@ -34,7 +34,8 @@ prepare() {
 build() {
 	cargo build --frozen --release --all-features \
 		--manifest-path="./$pkgname-$pkgver/Cargo.toml"
-	local exe="$(realpath "target/release/$pkgname")"
+	local exe
+	exe="$(realpath "target/release/$pkgname")"
 	"$exe" manifest | exe="$exe" perl -pe 's|\Q$ENV{exe}\E|/usr/bin/ff2mpv-rust|g' >manifest.json
 	"$exe" manifest_chromium | exe="$exe" perl -pe 's|\Q$ENV{exe}\E|/usr/bin/ff2mpv-rust|g' >manifest-chrome.json
 }
