@@ -4,7 +4,5 @@ github = "koreader/koreader"
 prefix = "v"
 use_latest_release = true
 [koreader-noto-sans-arabic-ui]
-source = "git"
-git = "https://salsa.debian.org/fonts-team/fonts-noto.git"
-prefix = "debian/"
-include_regex = 'debian/.*'
+source = "github"
+github = "koreader/koreader-fonts"

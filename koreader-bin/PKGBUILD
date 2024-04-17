@@ -3,7 +3,8 @@
 
 pkgname=koreader-bin
 pkgver=2024.03.1
-pkgrel=1
+_fonts_commit=046976988aa33639d60d6ffd25c7a0ff50b72ac0
+pkgrel=2
 pkgdesc="Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats"
 arch=(x86_64 aarch64 armv7h)
 url="https://koreader.rocks"
@@ -11,7 +12,7 @@ license=('AGPL-3.0-or-later')
 depends=(sdl2 noto-fonts ttf-droid)
 provides=(koreader)
 conflicts=(koreader)
-source=("https://salsa.debian.org/fonts-team/fonts-noto/-/raw/debian/20201225-2/hinted/ttf/NotoSansArabicUI/NotoSansArabicUI-"{Regular,Bold}".ttf")
+source=("https://github.com/koreader/koreader-fonts/raw/$_fonts_commit/noto/NotoSansArabicUI-"{Regular,Bold}".ttf")
 source_x86_64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-amd64.deb")
 source_aarch64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-arm64.deb")
 source_armv7h=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-armhf.deb")
@@ -28,12 +29,12 @@ package() {
 	done
 
 	# HACK: NotoSansArabicUI isn't distributed by notofonts project anymore and is probably deprecated.
-	# 			But it is still hard-coded in koreader.
+	#       But it is still hard-coded in koreader. We get it from GitHub.
 	install -Dm644 "NotoSansArabicUI-"{Regular,Bold}".ttf" "$pkgdir/usr/lib/koreader/fonts/noto/"
 }
 
-sha256sums=('43a90e0f0e9ca712ff0588dc2b119823d569367a6d0061eb5f7bfb9bfbe8cecc'
-            'ef5d9ce3d5b20a83bdc156ef48edc1e159322ada95ebacc133476c92f0bd102a')
+sha256sums=('409e307217626e94a5ad3eb71b86ba19a4ef096c2e3699083a5e6b008a5ae9a3'
+            '905ffee4bbe954d3fd725ed4f2c161dd2f6d2e304d2c725c1e0b8022194de3b9')
 sha256sums_x86_64=('119de2aa9d00d81670237e379efbe9ef5446431e853deb14072e0b85ae18cf85')
 sha256sums_aarch64=('f41bbe9967c9b8f687e6757bd4932b7068a989959f71fd7d29f55ab825bddbe2')
 sha256sums_armv7h=('861b0c35f6628c7d24700ade66a18a4f05e2bae00159d4d1dd3af19163c7eca1')
