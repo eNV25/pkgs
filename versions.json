@@ -8,5 +8,5 @@
   "void-tools": "20231124",
   "webtorrent-mpv-hook": "1.4.1",
   "xbps-static-bin": "0.59.2_1",
-  "zig-bin": "0.11.0"
+  "zig-bin": "0.12.0"
 }
