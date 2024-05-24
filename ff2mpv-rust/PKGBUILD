@@ -1,10 +1,10 @@
 # Maintainer: eNV25 <env252525@gmail.com>
 
 pkgname=ff2mpv-rust
-pkgver=1.1.4
+pkgver=1.1.5
 pkgrel=1
 pkgdesc="Native messaging host for ff2mpv written in Rust"
-arch=('x86_64')
+arch=('x86_64' 'aarch64')
 url="https://github.com/ryze312/ff2mpv-rust"
 license=('GPL3')
 conflicts=("ff2mpv-native-messaging-host-git" "ff2mpv-native-messaging-host-librewolf-git")
@@ -62,4 +62,4 @@ package() {
 	done
 }
 
-sha256sums=('ede289a55d614e5ff0422c0f1e02cfd71a88afa6c3880bf60bd9245c9b014806')
+sha256sums=('4af58c6dc49d3c9e354f06fe61cc3455d62f8c0e6d78f10b7392dbfd8c5e05b0')
