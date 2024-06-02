@@ -6,6 +6,7 @@
 !/justfile
 !/versions.json
 /*/*/**
+/*/*.tgz
 /*/*.tar.*
 /*/*.deb
 /*/*.rpm
