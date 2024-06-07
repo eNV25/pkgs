@@ -27,7 +27,8 @@
       "version": "20231124"
     },
     "webtorrent-mpv-hook": {
-      "version": "1.4.1"
+      "version": "1.4.3",
+      "url": "https://www.npmjs.com/package/webtorrent-mpv-hook/v/1.4.3"
     },
     "xbps-static-bin": {
       "version": "0.59.2_1"
