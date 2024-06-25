@@ -21,7 +21,9 @@
       "version": "5.2.1"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.30"
+      "version": "2.0.31",
+      "gitref": "refs/tags/v2.0.31",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.31"
     },
     "void-tools": {
       "version": "20231124"
