@@ -2,39 +2,24 @@
 # Upstream Maintainer: Martín Fdez <paziusss@gmail.com>
 
 pkgname=koreader-bin
-pkgver=2024.04
-_fonts_commit=046976988aa33639d60d6ffd25c7a0ff50b72ac0
+pkgver=2024.07
 pkgrel=1
 pkgdesc="Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats"
 arch=(x86_64 aarch64 armv7h)
 url="https://koreader.rocks"
 license=('AGPL-3.0-or-later')
-depends=(sdl2 noto-fonts ttf-droid)
+depends=(sdl2)
 provides=(koreader)
 conflicts=(koreader)
-source=("https://github.com/koreader/koreader-fonts/raw/$_fonts_commit/noto/NotoSansArabicUI-"{Regular,Bold}".ttf")
-source_x86_64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-amd64.deb")
-source_aarch64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-arm64.deb")
-source_armv7h=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-$pkgver-armhf.deb")
+source_x86_64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-x86_64-v$pkgver.tar.xz")
+source_aarch64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-aarch64-v$pkgver.tar.xz")
+source_armv7h=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-armv7l-v$pkgver.tar.xz")
 
 package() {
-	bsdtar xf data.tar.* -C "$pkgdir"
-
-	# HACK: koreader uses symlinks to fonts installed on Debian. Arch Linux uses a different directory.
-	for font in "$pkgdir/usr/lib/koreader/fonts/droid/"*.ttf; do
-		ln -sf ../../../../share/fonts/droid/"$(basename "$font")" "$font"
-	done
-	for font in "$pkgdir/usr/lib/koreader/fonts/noto/"*.ttf; do
-		ln -sf ../../../../share/fonts/noto/"$(basename "$font")" "$font"
-	done
-
-	# HACK: NotoSansArabicUI isn't distributed by notofonts project anymore and is probably deprecated.
-	#       But it is still hard-coded in koreader. We get it from GitHub.
-	install -Dm644 "NotoSansArabicUI-"{Regular,Bold}".ttf" "$pkgdir/usr/lib/koreader/fonts/noto/"
+	install -dm755 "$pkgdir/usr/"
+	mv -vf bin lib share "$pkgdir/usr/"
 }
 
-sha256sums=('409e307217626e94a5ad3eb71b86ba19a4ef096c2e3699083a5e6b008a5ae9a3'
-            '905ffee4bbe954d3fd725ed4f2c161dd2f6d2e304d2c725c1e0b8022194de3b9')
-sha256sums_x86_64=('86a25164366accf34b2bff016fe39acbbd09a8a00c281d04a5b6f37aee67a4bc')
-sha256sums_aarch64=('170c01f6c94a3a2610ddeb9ddad8aaa2feb218dc662227087ba9c5a6c1f6f159')
-sha256sums_armv7h=('2e079641c1e6e50abfecc52e89d8e2972d16b0e15901619678ee768cd1d628cc')
+sha256sums_x86_64=('b0f0ed8dd48e0adbf3b663f034e08791de8945a7788c97de476accb9648cfab6')
+sha256sums_aarch64=('0efde1a99d87daf33fc2dfbcedcaba997db8e3f8cdf48b113a9192aa2463d31b')
+sha256sums_armv7h=('c6f4676d1398dc16ec7fc72b336834b00d7536b5f71386ee2f5a3e86ff2bcfd5')
