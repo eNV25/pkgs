@@ -7,15 +7,17 @@
       "url": "https://github.com/ryze312/ff2mpv-rust/releases/tag/1.1.5"
     },
     "koreader": {
-      "version": "2024.04",
-      "gitref": "refs/tags/v2024.04",
-      "url": "https://github.com/koreader/koreader/releases/tag/v2024.04"
+      "version": "2024.07",
+      "gitref": "refs/tags/v2024.07",
+      "url": "https://github.com/koreader/koreader/releases/tag/v2024.07"
     },
     "koreader-noto-sans-arabic-ui": {
       "version": "20220911.163827"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.17.0e"
+      "version": "0.3.18.0",
+      "gitref": "refs/tags/v0.3.18.0",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.18.0"
     },
     "plexdrive": {
       "version": "5.2.1"
@@ -29,8 +31,8 @@
       "version": "20231124"
     },
     "webtorrent-mpv-hook": {
-      "version": "1.4.3",
-      "url": "https://www.npmjs.com/package/webtorrent-mpv-hook/v/1.4.3"
+      "version": "1.4.4",
+      "url": "https://www.npmjs.com/package/webtorrent-mpv-hook/v/1.4.4"
     },
     "xbps-static-bin": {
       "version": "0.59.2_1"
