@@ -1,13 +1,14 @@
 pkgbase = ff2mpv-rust
 	pkgdesc = Native messaging host for ff2mpv written in Rust
 	pkgver = 1.1.5
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ryze312/ff2mpv-rust
 	arch = x86_64
 	arch = aarch64
 	license = GPL3
 	makedepends = cargo
 	optdepends = mpv: open links in mpv
+	optdepends = cachy-browser: supported browser
 	optdepends = chromium: supported browser
 	optdepends = firefox: supported browser
 	optdepends = firefox-developer-edition: supported browser

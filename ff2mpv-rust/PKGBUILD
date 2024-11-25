@@ -2,7 +2,7 @@
 
 pkgname=ff2mpv-rust
 pkgver=1.1.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Native messaging host for ff2mpv written in Rust"
 arch=('x86_64' 'aarch64')
 url="https://github.com/ryze312/ff2mpv-rust"
@@ -12,6 +12,7 @@ provides=("ff2mpv-native-messaging-host-git" "ff2mpv-native-messaging-host-libre
 optdepends=(
 	'mpv: open links in mpv'
 	#"ff2mpv: browser extension"
+	"cachy-browser: supported browser"
 	"chromium: supported browser"
 	"firefox: supported browser"
 	"firefox-developer-edition: supported browser"
@@ -49,6 +50,7 @@ package() {
 	install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
 	# paths from `pacman -Fyx 'native-messaging-hosts/'` and ff2mpv-native-messaging-host-{,librewolf}-git
 	for _path in \
+		usr/lib/cachy-browser/native-messaging-hosts \
 		usr/lib/mozilla/native-messaging-hosts \
 		usr/lib/librewolf/native-messaging-hosts; do
 		install -Dm644 manifest.json "$pkgdir/$_path/ff2mpv.json"
