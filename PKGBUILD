@@ -3,9 +3,9 @@
 # previous maintainer did not leave his email
 
 pkgname=pandoc-crossref-bin
-pkgver=0.3.18.1
-_pkgver=0.3.18.1
-_pandoc_pkgver=3.6
+pkgver=0.3.18.1.a
+_pkgver=0.3.18.1a
+_pandoc_pkgver=3.6.2
 pkgrel=1
 pkgdesc="Pandoc filter for cross-references - executable only"
 url="https://github.com/lierdakil/pandoc-crossref/"
@@ -18,7 +18,7 @@ options=(!strip)
 source=(
     "pandoc-crossref-${_pkgver}.tar.xz::https://github.com/lierdakil/pandoc-crossref/releases/download/v${_pkgver}/pandoc-crossref-Linux-X64.tar.xz"
 )
-sha256sums=('63cf2b7470ce3fe5163d3c53a72b189884056021e2887e485cd538f54cdf4d42')
+sha256sums=('ef74b6682f447e8705105963624076e0410b964b2ae16c8072b2a3e241a044f2')
 
 package() {
     cd "${srcdir}"
