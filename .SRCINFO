@@ -1,7 +1,7 @@
 pkgbase = ff2mpv-rust
 	pkgdesc = Native messaging host for ff2mpv written in Rust
-	pkgver = 1.1.6
-	pkgrel = 2
+	pkgver = 1.1.7
+	pkgrel = 1
 	url = https://github.com/ryze312/ff2mpv-rust
 	arch = x86_64
 	arch = aarch64
@@ -20,7 +20,7 @@ pkgbase = ff2mpv-rust
 	provides = ff2mpv-native-messaging-host-librewolf-git
 	conflicts = ff2mpv-native-messaging-host-git
 	conflicts = ff2mpv-native-messaging-host-librewolf-git
-	source = https://github.com/ryze312/ff2mpv-rust/archive/refs/tags/1.1.6.tar.gz
-	sha256sums = a94121951c2dc90257636135b716532c8347ff5184fdd0153487fb404ff120a2
+	source = https://github.com/ryze312/ff2mpv-rust/archive/refs/tags/1.1.7.tar.gz
+	sha256sums = 0d6e3f36d585c463b9ef5b18042f9e47a867a119135072f5afd68b40ad3723bb
 
 pkgname = ff2mpv-rust
