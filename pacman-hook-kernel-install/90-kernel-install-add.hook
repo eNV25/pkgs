@@ -11,6 +11,7 @@ Operation = Upgrade
 Operation = Remove
 Target = usr/lib/initcpio/*
 Target = usr/lib/initcpio/*/*
+Target = usr/lib/firmware/*
 Target = usr/lib/modules/*/extramodules/*
 Target = usr/src/*/dkms.conf
 Target = usr/lib/booster/*
@@ -22,7 +23,7 @@ Target = usr/lib/kernel/*/*
 Target = boot/*-ucode.img
 
 [Action]
-Description = Installing kernel and initrd to $BOOT... (kernel-install)
+Description = Installing kernel and initrd using kernel-install...
 When = PostTransaction
 Exec = /usr/share/libalpm/scripts/kernel-install add
 NeedsTargets
