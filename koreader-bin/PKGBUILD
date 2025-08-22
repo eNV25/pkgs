@@ -2,7 +2,7 @@
 # Upstream Maintainer: Martín Fdez <paziusss@gmail.com>
 
 pkgname=koreader-bin
-pkgver=2024.11
+pkgver=2025.08
 pkgrel=1
 pkgdesc="Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats"
 arch=(x86_64 aarch64 armv7h)
@@ -20,6 +20,6 @@ package() {
 	mv -vf bin lib share "$pkgdir/usr/"
 }
 
-sha256sums_x86_64=('a6f6ccb07e30f701a5e2d27bdb7f4d064b55c7169bee556dbd4da0090b8056e8')
-sha256sums_aarch64=('993d5d961fa05438b347c06a826fabf49c9667751434aec5f99c8ed68ba4301b')
-sha256sums_armv7h=('97097edb96987febba2b9a7dfbff7e7cccb239844b772ccb92c4dd6be5c38af2')
+sha256sums_x86_64=('6468725399d3ae662246fa83c6791dda75d6e0f34e2dc9fc43de3875d6b14f2b')
+sha256sums_aarch64=('e743951af65e38f63638fc64ecc6b6fdaaed313c5c22e0d5e995e72f0a1adf17')
+sha256sums_armv7h=('0ce65ec57c0aa15cec03b02a09832bdfa0185decbd0b7613127a88693ce09e65')
