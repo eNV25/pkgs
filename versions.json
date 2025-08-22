@@ -12,9 +12,9 @@
       "url": "https://github.com/koreader/koreader/releases/tag/v2024.11"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.18.0b",
-      "gitref": "refs/tags/v0.3.18.0b",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.18.0b"
+      "version": "0.3.20",
+      "gitref": "refs/tags/v0.3.20",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.20"
     },
     "plexdrive": {
       "version": "5.2.1"
@@ -35,9 +35,9 @@
       "version": "0.59.2_1"
     },
     "zig-bin": {
-      "version": "0.13.0",
-      "gitref": "refs/tags/0.13.0",
-      "url": "https://github.com/ziglang/zig/releases/tag/0.13.0"
+      "version": "0.14.1",
+      "gitref": "refs/tags/0.14.1",
+      "url": "https://github.com/ziglang/zig/releases/tag/0.14.1"
     }
   }
 }
