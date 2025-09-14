@@ -20,9 +20,9 @@
       "version": "5.2.1"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.33",
-      "gitref": "refs/tags/v2.0.33",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.33"
+      "version": "2.0.34",
+      "gitref": "refs/tags/v2.0.34",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.34"
     },
     "void-tools": {
       "version": "20250212",
@@ -38,9 +38,9 @@
       "version": "0.60.4_1"
     },
     "zig-bin": {
-      "version": "0.14.1",
-      "gitref": "refs/tags/0.14.1",
-      "url": "https://github.com/ziglang/zig/releases/tag/0.14.1"
+      "version": "0.15.1",
+      "gitref": "refs/tags/0.15.1",
+      "url": "https://github.com/ziglang/zig/releases/tag/0.15.1"
     }
   }
 }
