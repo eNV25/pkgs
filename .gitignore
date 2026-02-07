@@ -10,6 +10,7 @@
 /*/*.tar.*
 /*/*.deb
 /*/*.rpm
+*.log
 !aur/**
 !*/PKGBUILD
 !*/.SRCINFO
