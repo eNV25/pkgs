@@ -22,8 +22,6 @@ install pkg: (paruinstall pkg)
 publish pkg: (aurpublish pkg)
 update pkg: (updpkgsums pkg)
 
-export PARU_CONF := "/dev/null"
-
 clean-all:
 	git clean -dffxi
 
