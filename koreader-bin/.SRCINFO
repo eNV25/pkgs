@@ -1,6 +1,6 @@
 pkgbase = koreader-bin
 	pkgdesc = Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats
-	pkgver = 2025.08
+	pkgver = 2025.10
 	pkgrel = 1
 	url = https://koreader.rocks
 	arch = x86_64
@@ -10,11 +10,11 @@ pkgbase = koreader-bin
 	depends = sdl2
 	provides = koreader
 	conflicts = koreader
-	source_x86_64 = https://github.com/koreader/koreader/releases/download/v2025.08/koreader-linux-x86_64-v2025.08.tar.xz
-	sha256sums_x86_64 = 6468725399d3ae662246fa83c6791dda75d6e0f34e2dc9fc43de3875d6b14f2b
-	source_aarch64 = https://github.com/koreader/koreader/releases/download/v2025.08/koreader-linux-aarch64-v2025.08.tar.xz
-	sha256sums_aarch64 = e743951af65e38f63638fc64ecc6b6fdaaed313c5c22e0d5e995e72f0a1adf17
-	source_armv7h = https://github.com/koreader/koreader/releases/download/v2025.08/koreader-linux-armv7l-v2025.08.tar.xz
-	sha256sums_armv7h = 0ce65ec57c0aa15cec03b02a09832bdfa0185decbd0b7613127a88693ce09e65
+	source_x86_64 = https://github.com/koreader/koreader/releases/download/v2025.10/koreader-linux-x86_64-v2025.10.tar.xz
+	sha256sums_x86_64 = b83fb359c4844fb9788216cf5e7d551048d465b445275f78762ada13a9cb3fd6
+	source_aarch64 = https://github.com/koreader/koreader/releases/download/v2025.10/koreader-linux-aarch64-v2025.10.tar.xz
+	sha256sums_aarch64 = cd4a4ef458edae619e05f9575d20340fd80226c6e2039515c38b6a1bd701349e
+	source_armv7h = https://github.com/koreader/koreader/releases/download/v2025.10/koreader-linux-armv7l-v2025.10.tar.xz
+	sha256sums_armv7h = cd495789a80c521318967d84711dd3c5d9d4751bd15283dffe0c932db123e4d0
 
 pkgname = koreader-bin
