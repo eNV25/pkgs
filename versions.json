@@ -7,22 +7,22 @@
       "url": "https://github.com/ryze312/ff2mpv-rust/releases/tag/1.1.7"
     },
     "koreader-bin": {
-      "version": "2025.08",
-      "gitref": "refs/tags/v2025.08",
-      "url": "https://github.com/koreader/koreader/releases/tag/v2025.08"
+      "version": "2025.10",
+      "gitref": "refs/tags/v2025.10",
+      "url": "https://github.com/koreader/koreader/releases/tag/v2025.10"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.20",
-      "gitref": "refs/tags/v0.3.20",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.20"
+      "version": "0.3.23",
+      "gitref": "refs/tags/v0.3.23",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.23"
     },
     "plexdrive": {
       "version": "5.2.1"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.34",
-      "gitref": "refs/tags/v2.0.34",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.34"
+      "version": "2.0.35",
+      "gitref": "refs/tags/v2.0.35",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.35"
     },
     "void-tools": {
       "version": "20250212",
@@ -31,8 +31,8 @@
       "url": "https://github.com/void-linux/void-runit/releases/tag/20250212"
     },
     "webtorrent-mpv-hook": {
-      "version": "1.4.5",
-      "url": "https://www.npmjs.com/package/webtorrent-mpv-hook/v/1.4.5"
+      "version": "1.4.6",
+      "url": "https://www.npmjs.com/package/webtorrent-mpv-hook/v/1.4.6"
     },
     "xbps-static-bin": {
       "version": "0.60.4_1"
