@@ -2,7 +2,8 @@
 # Upstream Maintainer: Martín Fdez <paziusss@gmail.com>
 
 pkgname=koreader-bin
-pkgver=2025.10
+epoch=1
+pkgver=2026.03
 pkgrel=1
 pkgdesc="Ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats"
 arch=(x86_64 aarch64 armv7h)
@@ -12,14 +13,14 @@ depends=(sdl2)
 provides=(koreader)
 conflicts=(koreader)
 source_x86_64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-x86_64-v$pkgver.tar.xz")
-source_aarch64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-aarch64-v$pkgver.tar.xz")
-source_armv7h=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-armv7l-v$pkgver.tar.xz")
+source_aarch64=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-arm64-v$pkgver.tar.xz")
+source_armv7h=("https://github.com/koreader/koreader/releases/download/v$pkgver/koreader-linux-armhf-v$pkgver.tar.xz")
 
 package() {
 	install -dm755 "$pkgdir/usr/"
 	mv -vf bin lib share "$pkgdir/usr/"
 }
 
-sha256sums_x86_64=('b83fb359c4844fb9788216cf5e7d551048d465b445275f78762ada13a9cb3fd6')
-sha256sums_aarch64=('cd4a4ef458edae619e05f9575d20340fd80226c6e2039515c38b6a1bd701349e')
-sha256sums_armv7h=('cd495789a80c521318967d84711dd3c5d9d4751bd15283dffe0c932db123e4d0')
+sha256sums_x86_64=('2fe4e5bb7973e30e3a3932f9370b549d6cc26272acaba471c35ebcaf81c741af')
+sha256sums_aarch64=('f50304e54ca295860bbddb836873e8a43d677f65832586f707bacd9533152ad6')
+sha256sums_armv7h=('7753b32f88df82d7549be94742b07ca31a8af9bdc2d33c0dc2b0384342109843')
