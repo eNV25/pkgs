@@ -32,6 +32,7 @@ if ((all_kernels)); then
 else
     for kver in "${!versions[@]}"; do
 	kimage="/usr/lib/modules/$kver/vmlinuz"
+	[[ ! -e "$kimage" ]] && continue
 	kernel-install "$@" "$kver" "$kimage" || true
     done
 fi
