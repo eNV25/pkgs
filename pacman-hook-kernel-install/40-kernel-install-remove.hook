@@ -5,6 +5,6 @@ Target = usr/lib/modules/*/vmlinuz
 
 [Action]
 Description = Removing kernel and initrd using kernel-install...
-When = PostTransaction
+When = PreTransaction
 Exec = /usr/share/libalpm/scripts/kernel-install remove
 NeedsTargets
