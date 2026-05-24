@@ -7,22 +7,22 @@
       "url": "https://github.com/ryze312/ff2mpv-rust/releases/tag/1.1.7"
     },
     "koreader-bin": {
-      "version": "2025.10",
-      "gitref": "refs/tags/v2025.10",
-      "url": "https://github.com/koreader/koreader/releases/tag/v2025.10"
+      "version": "2026.03",
+      "gitref": "refs/tags/v2026.03",
+      "url": "https://github.com/koreader/koreader/releases/tag/v2026.03"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.23",
-      "gitref": "refs/tags/v0.3.23",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.23"
+      "version": "0.3.24a",
+      "gitref": "refs/tags/v0.3.24a",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.24a"
     },
     "plexdrive": {
       "version": "5.2.1"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.35",
-      "gitref": "refs/tags/v2.0.35",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.35"
+      "version": "2.0.38",
+      "gitref": "refs/tags/v2.0.38",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.38"
     },
     "void-tools": {
       "version": "20250212",
@@ -38,9 +38,9 @@
       "version": "0.60.4_1"
     },
     "zig-bin": {
-      "version": "0.15.1",
-      "gitref": "refs/tags/0.15.1",
-      "url": "https://github.com/ziglang/zig/releases/tag/0.15.1"
+      "version": "0.16.0",
+      "revision": "44d9672fed001115e674fd5ddb32747ef43a7af4",
+      "url": "https://codeberg.org/ziglang/zig/releases/tag/0.16.0"
     }
   }
 }
