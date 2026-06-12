@@ -23,7 +23,7 @@ jobs:
           github = "${{ github.token }}"
           "codeberg.org" = "${{ secrets.CODEBERG_TOKEN }}"
           EOF
-          uv tool install nvchecker
+          uv tool install nvchecker --with pyalpm
           just nvcheck > "${{ runner.temp }}"/nvcheck.output
           just nvtake --all
       - uses: peter-evans/create-pull-request@v8
