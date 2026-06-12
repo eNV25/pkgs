@@ -15,7 +15,7 @@ jobs:
     steps:
       - run: |
           echo "RUNNER_TEMP=$RUNNER_TEMP" > "$GITHUB_ENV"
-          pacman -Syu --noconfirm git nodejs just fd uv
+          pacman -Syu --noconfirm git nodejs just fd nvchecker
       - uses: actions/checkout@v6
       - run: |
           mkdir -p ~/.config/nvchecker/
@@ -24,7 +24,6 @@ jobs:
           github = "${{ github.token }}"
           "codeberg.org" = "${{ secrets.CODEBERG_TOKEN }}"
           EOF
-          uv tool install nvchecker --with pyalpm
           just nvcheck > "$RUNNER_TEMP"/nvcheck.output
           just nvtake --all
       - uses: peter-evans/create-pull-request@v8
