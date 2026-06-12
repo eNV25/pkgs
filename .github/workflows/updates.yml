@@ -16,7 +16,7 @@ jobs:
       - name: Setup environment
         run: |
           echo "RUNNER_TEMP=$RUNNER_TEMP" > "$GITHUB_ENV"
-          pacman -Syu --noconfirm git nodejs just fd nvchecker
+          pacman -Syu --noconfirm git nodejs just fd nvchecker pyalpm
           mkdir -p ~/.config/nvchecker/
           cat <<'EOF' > ~/.config/nvchecker/keyfile.toml
           [keys]
