@@ -28,7 +28,7 @@ jobs:
           "codeberg.org" = "${{ secrets.CODEBERG_TOKEN }}"
           EOF
           uv tool install nvchecker --with pyalpm
-          just nvcheck > "${{ runner.temp }}"/nvcheck.output
+          just nvcheck > "$RUNNER_TEMP"/nvcheck.output
           just nvtake --all
       - uses: peter-evans/create-pull-request@v8
         with:
@@ -36,5 +36,5 @@ jobs:
           branch: "updates"
           title: "Updates"
           commit-message: "Update versions.json"
-          body-path: "${{ runner.temp }}/nvcheck.output"
+          body-path: "${{ env.RUNNER_TEMP }}/nvcheck.output"
           add-paths: versions.json
