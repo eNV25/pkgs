@@ -13,17 +13,19 @@ jobs:
     container:
       image: archlinux:base-devel
     steps:
-      - run: |
+      - name: Setup environment
+        run: |
           echo "RUNNER_TEMP=$RUNNER_TEMP" > "$GITHUB_ENV"
           pacman -Syu --noconfirm git nodejs just fd nvchecker
-      - uses: actions/checkout@v6
-      - run: |
           mkdir -p ~/.config/nvchecker/
           cat <<'EOF' > ~/.config/nvchecker/keyfile.toml
           [keys]
           github = "${{ github.token }}"
           "codeberg.org" = "${{ secrets.CODEBERG_TOKEN }}"
           EOF
+      - uses: actions/checkout@v6
+      - name: Check for updates
+        run: |
           just nvcheck > "$RUNNER_TEMP"/nvcheck.output
           just nvtake --all
       - uses: peter-evans/create-pull-request@v8
