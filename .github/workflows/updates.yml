@@ -15,12 +15,8 @@ jobs:
     steps:
       - run: |
           echo "RUNNER_TEMP=$RUNNER_TEMP" > "$GITHUB_ENV"
-          pacman -Syu --noconfirm git nodejs
+          pacman -Syu --noconfirm git nodejs just fd uv
       - uses: actions/checkout@v6
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: just fd-find
-      - uses: astral-sh/setup-uv@v8.2.0
       - run: |
           mkdir -p ~/.config/nvchecker/
           cat <<'EOF' > ~/.config/nvchecker/keyfile.toml
