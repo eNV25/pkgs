@@ -22,16 +22,17 @@ while read -r path; do
 		;;
 	*)
 		all_kernels=1
+		break;
 		;;
 	esac
 done
 
-((all_kernels)) && for file in usr/lib/modules/*/vmlinuz; do
-	pacman -Qqo "$file" 1>/dev/null 2>/dev/null &&
-		add_file "$file"
-done
-
-for kver in "${!versions[@]}"; do
+if ((all_kernels)); then
+    kernel-install add-all
+else
+    for kver in "${!versions[@]}"; do
 	kimage="/usr/lib/modules/$kver/vmlinuz"
+	[[ ! -e "$kimage" ]] && continue
 	kernel-install "$@" "$kver" "$kimage" || true
-done
+    done
+fi
