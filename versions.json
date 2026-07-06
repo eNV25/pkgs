@@ -22,9 +22,9 @@
       "url": "https://github.com/plexdrive/plexdrive/releases/tag/5.2.1"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.38",
-      "gitref": "refs/tags/v2.0.38",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.38"
+      "version": "2.0.39",
+      "gitref": "refs/tags/v2.0.39",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.39"
     },
     "void-tools": {
       "version": "20250212",
