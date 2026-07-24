@@ -1,0 +1,26 @@
+# Maintainer: eNV25 <env252525@gmail.com>
+
+pkgname=udsclient3-upm
+pkgver=4.0.0
+pkgrel=1
+pkgdesc="UDS Client — UPM (Universidad Politécnica de Madrid) version"
+arch=(any)
+url="https://escritorio.upm.es/uds/page/services"
+license=('BSD-3-Clause')
+depends=(freerdp pyside6 python-six python-requests python-cryptography)
+source=("https://escritorio.upm.es/uds/res/clients/udsclient3-$pkgver.tar.gz")
+noextract=("udsclient3-$pkgver.tar.gz")
+
+build() {
+	bsdtar -xOf "udsclient3-$pkgver.tar.gz" ./usr/lib/UDSClient/UDSClient.py |
+		awk 'NR <= 3 { next } NF == 0 { exit } { sub(/^# ?/, ""); print }' >LICENSE
+}
+
+package() {
+	bsdtar -v -xf "udsclient3-$pkgver.tar.gz" -C "$pkgdir" ./usr/
+	find "$pkgdir" -exec chmod -v 'u-s,g-s,-t' '{}' '+'
+	find "$pkgdir" -type d -exec chmod -v 755 '{}' '+'
+	install -v -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}
+
+sha256sums=('f1082d62dc10b5cbd74f9613bfc6a9dbe79a5bd348ddf0fd13251bd6ed194d27')

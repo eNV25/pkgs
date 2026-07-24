@@ -1,0 +1,17 @@
+pkgbase = udsclient3-upm
+	pkgdesc = UDS Client — UPM (Universidad Politécnica de Madrid) version
+	pkgver = 4.0.0
+	pkgrel = 1
+	url = https://escritorio.upm.es/uds/page/services
+	arch = any
+	license = BSD-3-Clause
+	depends = freerdp
+	depends = pyside6
+	depends = python-six
+	depends = python-requests
+	depends = python-cryptography
+	noextract = udsclient3-4.0.0.tar.gz
+	source = https://escritorio.upm.es/uds/res/clients/udsclient3-4.0.0.tar.gz
+	sha256sums = f1082d62dc10b5cbd74f9613bfc6a9dbe79a5bd348ddf0fd13251bd6ed194d27
+
+pkgname = udsclient3-upm
