@@ -2,7 +2,7 @@ name: Check for package updates with nvcheck
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -36,3 +36,4 @@ jobs:
           commit-message: "Update versions.json"
           body-path: "${{ env.RUNNER_TEMP }}/nvcheck.output"
           add-paths: versions.json
+          assignees: eNV25
