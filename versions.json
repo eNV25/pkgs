@@ -4,27 +4,32 @@
     "ff2mpv-rust": {
       "version": "1.1.7",
       "gitref": "refs/tags/1.1.7",
-      "url": "https://github.com/ryze312/ff2mpv-rust/releases/tag/1.1.7"
+      "url": "https://github.com/ryze312/ff2mpv-rust/releases/tag/1.1.7",
+      "creation_time": "2025-05-31T23:29:09Z"
     },
     "koreader-bin": {
-      "version": "2026.07",
-      "gitref": "refs/tags/v2026.07",
-      "url": "https://github.com/koreader/koreader/releases/tag/v2026.07"
+      "version": "2026.07.1",
+      "gitref": "refs/tags/v2026.07.1",
+      "url": "https://github.com/koreader/koreader/releases/tag/v2026.07.1",
+      "creation_time": "2026-08-01T11:10:30Z"
     },
     "pandoc-crossref-bin": {
       "version": "0.3.25",
       "gitref": "refs/tags/v0.3.25",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.25"
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.25",
+      "creation_time": "2026-07-28T12:05:45Z"
     },
     "plexdrive": {
       "version": "5.2.1",
       "gitref": "refs/tags/5.2.1",
-      "url": "https://github.com/plexdrive/plexdrive/releases/tag/5.2.1"
+      "url": "https://github.com/plexdrive/plexdrive/releases/tag/5.2.1",
+      "creation_time": "2022-02-02T19:02:55Z"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.39",
-      "gitref": "refs/tags/v2.0.39",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.39"
+      "version": "2.0.40",
+      "gitref": "refs/tags/v2.0.40",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.40",
+      "creation_time": "2026-08-04T14:23:09Z"
     },
     "void-tools": {
       "version": "20250212",
