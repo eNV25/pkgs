@@ -16,7 +16,7 @@ jobs:
       - name: Setup environment
         run: |
           echo "RUNNER_TEMP=$RUNNER_TEMP" > "$GITHUB_ENV"
-          pacman -Syu --noconfirm git nodejs just fd nvchecker pyalpm
+          pacman -Syu --noconfirm git just fd nvchecker pyalpm
           mkdir -p ~/.config/nvchecker/
           cat <<'EOF' > ~/.config/nvchecker/keyfile.toml
           [keys]
@@ -30,7 +30,6 @@ jobs:
           just nvtake --all
       - uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ github.token }}
           branch: "updates"
           title: "Updates"
           commit-message: "Update versions.json"
