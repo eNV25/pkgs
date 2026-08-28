@@ -4,6 +4,7 @@
 !/.shellcheckrc
 !/README
 !/justfile
+!/*.just
 !/versions.json
 /*/*/**
 /*/*.tgz
