@@ -1,0 +1,4 @@
+[udsclient3-upm]
+source = "regex"
+url = "https://escritorio.upm.es/uds/utility/uds.js"
+regex = '"version": "(\d+(?:.\d+)*)"'
