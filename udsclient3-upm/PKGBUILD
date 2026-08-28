@@ -2,7 +2,7 @@
 
 pkgname=udsclient3-upm
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="UDS Client — UPM (Universidad Politécnica de Madrid) version"
 arch=(any)
 url="https://escritorio.upm.es/uds/page/services"
@@ -18,8 +18,7 @@ build() {
 
 package() {
 	bsdtar -v -xf "udsclient3-$pkgver.tar.gz" -C "$pkgdir" ./usr/
-	find "$pkgdir" -exec chmod -v 'u-s,g-s,-t' '{}' '+'
-	find "$pkgdir" -type d -exec chmod -v 755 '{}' '+'
+	chmod -c -R 'a-st,u=rwX,go=rX' "$pkgdir"
 	install -v -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 }
 

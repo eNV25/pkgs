@@ -1,7 +1,7 @@
 pkgbase = udsclient3-upm
 	pkgdesc = UDS Client — UPM (Universidad Politécnica de Madrid) version
 	pkgver = 4.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://escritorio.upm.es/uds/page/services
 	arch = any
 	license = BSD-3-Clause
