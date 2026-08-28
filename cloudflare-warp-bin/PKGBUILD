@@ -7,12 +7,13 @@
 # Contributor: Jongsik Kim <jjong84@gmail.com>
 # Contributor: <memoryshadow@outlook.com>
 # Contributor: Daffa Haj Tsaqif <narutohaj00@gmail.com>
+# Contributor: env252525@gmail.com
 
 pkgname=cloudflare-warp-bin
 pkgver=2026.6.880
 pkgrel=1
 pkgdesc="Cloudflare Warp Client"
-arch=('x86_64')
+arch=('x86_64' 'aarch64')
 url="https://1.1.1.1"
 license=('unknown')
 depends=('at-spi2-core'
@@ -46,8 +47,10 @@ provides=('warp-cli' 'warp-diag' 'warp-svc')
 conflicts=("${pkgname%-bin}")
 options=('!strip')
 install="${pkgname}.install"
-source=("${pkgname}-${pkgver}.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${pkgver}.0_amd64.deb")
-sha256sums=('648a7c7e9085f8e50d32a2adcacb0c2049fb72ebeb02ebe913becadee3ab0d4c')
+source_x86_64=("${pkgname}-${pkgver}_x86_64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${pkgver}.0_amd64.deb")
+source_aarch64=("${pkgname}-${pkgver}_aarch64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${pkgver}.0_arm64.deb")
+sha256sums_x86_64=('648a7c7e9085f8e50d32a2adcacb0c2049fb72ebeb02ebe913becadee3ab0d4c')
+sha256sums_aarch64=('6579a21e8b59a8b1dac3cd2ea47ed5908f37dc263c4cce507d00516bc1a32482')
 
 prepare() {
     mkdir -p "${srcdir}/build"
