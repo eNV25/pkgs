@@ -1,11 +1,10 @@
-clean pkg:
-	cd {{ pkg }} && rm -rf *.pkg.tar*
+paru := "paru --rebuild=yes"
 
-parubuild pkg: (clean pkg)
-	paru -B {{ pkg }}
+parubuild pkg:
+	{{ paru }} -B {{ pkg }}
 
-paruinstall pkg: (clean pkg)
-	paru -Bi {{ pkg }}
+paruinstall pkg:
+	{{ paru }} -Bi {{ pkg }}
 
 updpkgsums pkg:
 	cd {{ pkg }} && updpkgsums
