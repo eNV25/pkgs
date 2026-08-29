@@ -18,6 +18,7 @@ build() {
 
 package() {
 	bsdtar -v -xf "udsclient3-$pkgver.tar.gz" -C "$pkgdir" ./usr/
+	chown -c -R root:root "$pkgdir"
 	chmod -c -R 'a-st,u=rwX,go=rX' "$pkgdir"
 	install -v -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 }
