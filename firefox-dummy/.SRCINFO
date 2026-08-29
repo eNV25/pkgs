@@ -1,8 +1,0 @@
-pkgbase = firefox-dummy
-	pkgver = 100
-	pkgrel = 1
-	arch = any
-	provides = firefox=100
-	conflicts = firefox
-
-pkgname = firefox-dummy
