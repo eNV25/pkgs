@@ -29,10 +29,10 @@
       "creation_time": "2022-02-02T19:02:55Z"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.40",
-      "gitref": "refs/tags/v2.0.40",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.40",
-      "creation_time": "2026-08-04T14:23:09Z"
+      "version": "2.0.41",
+      "gitref": "refs/tags/v2.0.41",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.41",
+      "creation_time": "2026-09-01T15:57:46Z"
     },
     "udsclient3-upm": {
       "version": "4.0.0"
