@@ -17,10 +17,10 @@
       "creation_time": "2026-08-01T11:10:30Z"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.25",
-      "gitref": "refs/tags/v0.3.25",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.25",
-      "creation_time": "2026-07-28T12:05:45Z"
+      "version": "0.3.25a",
+      "gitref": "refs/tags/v0.3.25a",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.25a",
+      "creation_time": "2026-09-06T19:21:31Z"
     },
     "plexdrive": {
       "version": "5.2.1",
@@ -29,10 +29,10 @@
       "creation_time": "2022-02-02T19:02:55Z"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.40",
-      "gitref": "refs/tags/v2.0.40",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.40",
-      "creation_time": "2026-08-04T14:23:09Z"
+      "version": "2.0.41",
+      "gitref": "refs/tags/v2.0.41",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.41",
+      "creation_time": "2026-09-01T15:57:46Z"
     },
     "udsclient3-upm": {
       "version": "4.0.0"
