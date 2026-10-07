@@ -51,9 +51,9 @@
       "version": "0.60.4_1"
     },
     "zig-bin": {
-      "version": "0.16.0",
-      "revision": "44d9672fed001115e674fd5ddb32747ef43a7af4",
-      "url": "https://codeberg.org/ziglang/zig/releases/tag/0.16.0"
+      "version": "0.17.0",
+      "revision": "afee4225358129f909e01dfaed265dca0977befe",
+      "url": "https://codeberg.org/ziglang/zig/releases/tag/0.17.0"
     }
   }
 }
