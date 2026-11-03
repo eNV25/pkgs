@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cloudflare-warp-bin": {
-      "version": "2026.8.2100"
+      "version": "2026.8.2115"
     },
     "ff2mpv-rust": {
       "version": "1.1.7",
@@ -17,10 +17,10 @@
       "creation_time": "2026-08-01T11:10:30Z"
     },
     "pandoc-crossref-bin": {
-      "version": "0.3.25a",
-      "gitref": "refs/tags/v0.3.25a",
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.25a",
-      "creation_time": "2026-09-06T19:21:31Z"
+      "version": "0.3.26a",
+      "gitref": "refs/tags/v0.3.26a",
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.26a",
+      "creation_time": "2026-10-29T11:34:45Z"
     },
     "plexdrive": {
       "version": "5.2.1",
@@ -29,10 +29,10 @@
       "creation_time": "2022-02-02T19:02:55Z"
     },
     "psiphon-tunnel-core": {
-      "version": "2.0.41",
-      "gitref": "refs/tags/v2.0.41",
-      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.41",
-      "creation_time": "2026-09-01T15:57:46Z"
+      "version": "2.0.42",
+      "gitref": "refs/tags/v2.0.42",
+      "url": "https://github.com/Psiphon-Labs/psiphon-tunnel-core/releases/tag/v2.0.42",
+      "creation_time": "2026-10-19T15:43:39Z"
     },
     "udsclient3-upm": {
       "version": "4.0.0"
@@ -51,9 +51,9 @@
       "version": "0.60.4_1"
     },
     "zig-bin": {
-      "version": "0.17.0",
-      "revision": "afee4225358129f909e01dfaed265dca0977befe",
-      "url": "https://codeberg.org/ziglang/zig/releases/tag/0.17.0"
+      "version": "0.17.1",
+      "revision": "4fe56ac80cdd98e7cfb267acfebaaf9fc5255279",
+      "url": "https://codeberg.org/ziglang/zig/releases/tag/0.17.1"
     }
   }
 }
