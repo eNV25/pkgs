@@ -1,6 +1,6 @@
 pkgbase = cloudflare-warp-bin
 	pkgdesc = Cloudflare Warp Client
-	pkgver = 2026.8.2100
+	pkgver = 2026.8.2115
 	pkgrel = 1
 	url = https://1.1.1.1
 	install = cloudflare-warp-bin.install
@@ -39,9 +39,9 @@ pkgbase = cloudflare-warp-bin
 	provides = warp-svc
 	conflicts = cloudflare-warp
 	options = !strip
-	source_x86_64 = cloudflare-warp-bin-2026.8.2100_x86_64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_2026.8.2100.0_amd64.deb
-	sha256sums_x86_64 = 412bec61b1df9530a1cc56efc3d8671eeaa0280e1010d092c76a45caeb3a966d
-	source_aarch64 = cloudflare-warp-bin-2026.8.2100_aarch64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_2026.8.2100.0_arm64.deb
-	sha256sums_aarch64 = 8198c2b55a43122291b3add1efc2ead22623b141ef4f93c83fc0d6939400f957
+	source_x86_64 = cloudflare-warp-bin-2026.8.2115_x86_64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_2026.8.2115.0_amd64.deb
+	sha256sums_x86_64 = 0209107860c3c6851a9ab8fd03690121a3dea3199b084f8197620072c671cd68
+	source_aarch64 = cloudflare-warp-bin-2026.8.2115_aarch64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_2026.8.2115.0_arm64.deb
+	sha256sums_aarch64 = e5488e35961d66989e6a0f591a74d48136c23f450dca7d36d2d5426b63a9eee2
 
 pkgname = cloudflare-warp-bin

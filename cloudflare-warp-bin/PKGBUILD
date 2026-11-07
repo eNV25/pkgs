@@ -10,7 +10,7 @@
 # Contributor: env252525@gmail.com
 
 pkgname=cloudflare-warp-bin
-pkgver=2026.8.2100
+pkgver=2026.8.2115
 pkgrel=1
 pkgdesc="Cloudflare Warp Client"
 arch=('x86_64' 'aarch64')
@@ -49,8 +49,8 @@ options=('!strip')
 install="${pkgname}.install"
 source_x86_64=("${pkgname}-${pkgver}_x86_64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${pkgver}.0_amd64.deb")
 source_aarch64=("${pkgname}-${pkgver}_aarch64.deb::https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${pkgver}.0_arm64.deb")
-sha256sums_x86_64=('412bec61b1df9530a1cc56efc3d8671eeaa0280e1010d092c76a45caeb3a966d')
-sha256sums_aarch64=('8198c2b55a43122291b3add1efc2ead22623b141ef4f93c83fc0d6939400f957')
+sha256sums_x86_64=('0209107860c3c6851a9ab8fd03690121a3dea3199b084f8197620072c671cd68')
+sha256sums_aarch64=('e5488e35961d66989e6a0f591a74d48136c23f450dca7d36d2d5426b63a9eee2')
 
 prepare() {
     mkdir -p "${srcdir}/build"
